@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial
+scale=1.0"
+    />
+    <script type="text/javascript">
+      function Changes() {
+        let title = document.getElementById("title");
+        title.textContent = "Updated Title";
+
+        let username = document.getElementsByName("username")[0];
+        username.value = "John Doe";
+
+        let Gender = document.getElementsByName("gender");
+        for (let radio of Gender) {
+          if (radio.checked) {
+            console.log("Selected Gender:", radio.value);
+          }
+        }
+
+        let p = document.getElementsByTagName("p");
+        console.log("Total <p> elements:", p.length);
+
+        let fruits = document.getElementsByTagName("li");
+        for (let i of fruits) {
+          console.log("List Item:", i.textContent);
+        }
+
+        let input = document.getElementsByClassName("input");
+        for (let i of input) {
+          i.style.backgroundColor = "lightblue";
+        }
+
+        let p1 = document.querySelector(".info");
+        p1.textContent = "This is the first info paragraph";
+
+        let g1 = document.querySelector("input[name='gender']");
+        g1.checked = true;
+
+        let pall = document.querySelectorAll(".info");
+        pall.forEach((para) => console.log("Info Text:", para.textContent));
+
+        let checkboxes = document.querySelectorAll(".hobby");
+        checkboxes.forEach((checkbox) => {
+          checkbox.checked = true;
+          console.log("Checked Hobby:", checkbox.value);
+        });
+      }
+    </script>
+    <title>23BCE1121</title>
+  </head>
+  <body>
+    <h1 id="title">Original Title</h1>
+    <input type="text" name="username" class="input" />
+
+    <p class="info">
+      She considered the birds to be her friends. She'd put out food for them
+      each morning and then she'd watch as they came to the feeders to gorge
+      themselves for the day. She wondered what they would do if something ever
+      happened to her. Would they miss the meals she provided if she failed to
+      put out the food one morning?
+    </p>
+    <p class="info">
+      He wandered down the stairs and into the basement. The damp, musty smell
+      of unuse hung in the air. A single, small window let in a glimmer of
+      light, but this simply made the shadows in the basement deeper. He inhaled
+      deeply and looked around at a mess that had been accumulating for over 25
+      years. He was positive that this was the place he wanted to live.
+    </p>
+    He was after the truth. At least, that's what he told himself. He believed
+    it, but any rational person on the outside could see he was lying to
+    himself. It was apparent he was really only after his own truth that he'd
+    already decided and was after this truth because the facts didn't line up
+    with the truth he wanted. So he continued to tell everyone he was after the
+    truth oblivious to the real truth sitting right in front of him.
+    <p>
+      There was something in the tree. It was difficult to tell from the ground,
+      but Rachael could see movement. She squinted her eyes and peered in the
+      direction of the movement, trying to decipher exactly what she had spied.
+      The more she peered, however, the more she thought it might be a figment
+      of her imagination. Nothing seemed to move until the moment she began to
+      take her eyes off the tree. Then in the corner of her eye, she would see
+      the movement again and begin the process of staring again.
+    </p>
+    <br />
+    <ul>
+      <li>Apple</li>
+      <li>Orange</li>
+      <li>Mango</li>
+    </ul>
+    <div class="input">
+      <input type="radio" name="gender" value="Male" /> Male
+      <input type="radio" name="gender" value="Female" /> Female
+      <br />
+      <input type="checkbox" class="sports" value="Football" />Football
+      <input type="checkbox" class="sprots" value="Basketball" /> Basketball
+      <input type="checkbox" class="sports" value="Cricket" />Cricket
+    </div>
+
+    <br /><br />
+
+    <button onclick="Changes()">Apply Changes</button>
+  </body>
+</html>

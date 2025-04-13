@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>23BCE1121</title>
+    <script type="text/javascript"></script>
+  </head>
+  <body>
+    <h1 style="text-align: center">Ticket Booth</h1>
+    <center>
+      <p>Adults (Rs.10 each)</p>
+      <input
+        type="text"
+        id="Adults"
+        style="width: 50px; box-shadow: -2px -2px 2px black"
+      /><br />
+      <p>Children (Rs.5 each)</p>
+      <input
+        type="text"
+        id="Children"
+        style="width: 50px; box-shadow: -2px -2px 2px black"
+      /><br /><br />
+      <button onclick="calculateTotal()">Total</button>&emsp;
+      <input
+        type="text"
+        id="cost"
+        style="width: 50px; box-shadow: -2px -2px 2px black"
+      /><br /><br />
+      <script type="text/javascript">
+        function calculateTotal() {
+          adultPrice = 10;
+          childPrice = 5;
+          adults = document.getElementById("Adults").value || 0;
+          children = document.getElementById("Children").value || 0;
+          total = adults * adultPrice + children * childPrice;
+          document.getElementById("cost").value = total;
+        }
+      </script>
+    </center>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23BCE1121</title>
+</head>
+<body>
+    
+    <h1>New York</h1>
+    <h2 style="display: inline-block;">Number of HOT days=</h2>
+    <h2 id="hot" style="display: inline-block;"> </h1><br>
+    <h2 style="display: inline-block;">Number of PLEASANT days=</h2>
+    <h2 id="pleasant" style="display: inline-block;"> </h1><br>
+    <h2 style="display: inline-block;">Number of COLD days=</h2>
+    <h2 id="cold" style="display: inline-block;"> </h1><br>
+    <script type="text/javascript">
+        table="<table border='1'>"
+        const temperatures=[55,62,68,74,59,45,41,58,60,67,65,78,82,88,91,92,90,93,87,80,78,79,72,68,61,59,55,65];
+        
+        let a=0;
+        let b=0;
+        let c=0;
+        for(i in temperatures){
+            if(temperatures[i]>=85){
+                table+="<tr><th>&emsp;&emsp;HOT&emsp;&emsp;</th><td>&emsp;&emsp;"+temperatures[i]+"&emsp;&emsp;</td></tr>"
+                a++;
+            }
+            else if(temperatures[i]<60){
+                table+="<tr><th>&emsp;&emsp;COLD&emsp;&emsp;</th><td>&emsp;&emsp;"+temperatures[i]+"&emsp;&emsp;</td></tr>"
+                c++;
+            }
+            else{
+                table+="<tr><th>&emsp;&emsp;PLEASANT&emsp;&emsp;</th><td>&emsp;&emsp;"+temperatures[i]+"&emsp;&emsp;</td></tr>"
+                b++;
+            }
+        }
+        table+="</table>"
+        document.getElementById("hot").innerHTML=a;
+        document.getElementById("pleasant").innerHTML=b;
+        document.getElementById("cold").innerHTML=c;
+        document.write(table);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>23BCE1121</title>
+    <script type="text/javascript">
+      var pid = [1, 2, 3, 4, 5, 6, 7, 8];
+      const name = [
+        "Alen",
+        "Deena",
+        "Diana",
+        "Jack",
+        "Jian",
+        "Kelvin",
+        "Louis",
+        "Rex",
+      ];
+      var age = [39, 47, 21, 54, 23, 61, 69, 49];
+      function displayTable() {
+        let table =
+          "<table border='1'><tr><th>ID</th><th>Name</th><th>Age</th></tr>";
+        for (let i = 0; i < pid.length; i++) {
+          table += `<tr><td>${pid[i]}</td><td>${name[i]}</td><td>${age[i]}</td></tr>`;
+        }
+        table += "</table>";
+        document.getElementById("tableContainer").innerHTML = table;
+      }
+
+      function sortDescending() {
+        for (let i = 0; i < age.length - 1; i++) {
+          for (let j = 0; j < age.length - 1 - i; j++) {
+            if (age[j] < age[j + 1]) {
+              let tempAge = age[j];
+              age[j] = age[j + 1];
+              age[j + 1] = tempAge;
+              let tempName = name[j];
+              name[j] = name[j + 1];
+              name[j + 1] = tempName;
+              let tempPid = pid[j];
+              pid[j] = pid[j + 1];
+              pid[j + 1] = tempPid;
+            }
+          }
+        }
+        displayTable();
+      }
+
+      function findRecord() {
+        let searchpid = parseInt(prompt("Enter PID to search:"));
+        let index = pid.indexOf(searchpid);
+        if (index !== -1) {
+          alert(
+            `Record Found: ID: ${pid[index]}, Name: ${name[index]}, Age: ${age[index]}`
+          );
+        } else {
+          alert("Record not found.");
+        }
+      }
+
+      function findByRange() {
+        let minAge = parseInt(prompt("Enter minimum age:"));
+        let maxAge = parseInt(prompt("Enter maximum age:"));
+
+        let filteredTable =
+          "<table border='1'><tr><th>ID</th><th>Name</th><th>Age</th></tr>";
+        for (let i = 0; i < age.length; i++) {
+          if (age[i] >= minAge && age[i] <= maxAge) {
+            filteredTable += `<tr><td>${pid[i]}</td><td>${name[i]}</td><td>${age[i]}</td></tr>`;
+          }
+        }
+        filteredTable += "</table>";
+
+        document.getElementById("tableContainer").innerHTML = filteredTable;
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Person Records</h2>
+    <div id="tableContainer"></div>
+    <button onclick="sortDescending()">Reverse Sort</button>
+    <button onclick="findRecord()">Find Record</button>
+    <button onclick="findByRange()">Find by Range</button>
+  </body>
+</html>

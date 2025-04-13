@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>23BCE1121</title>
+    <script type="text/javascript">
+      var a;
+
+      function get() {
+        a = parseInt(prompt("enter operand 1"));
+      }
+
+      function post() {
+        if (a >= 18) {
+          alert("You are eligible to drive");
+        } else {
+          alert("You are NOT eligible to drive");
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <button onclick="get()" value="Enter values">Enter your age</button>
+
+    <button onclick="post()" value="Obtain result">Verify</button>
+  </body>
+</html>

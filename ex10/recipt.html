@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial
+scale=1.0"
+    />
+    <title>23BCE1087</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Order Receipt</h2>
+      <div id="receipt"></div>
+    </div>
+    <script>
+      let orderData = JSON.parse(localStorage.getItem("order"));
+      let receiptDiv = document.getElementById("receipt");
+
+      if (orderData) {
+        receiptDiv.innerHTML = ` 
+                <p><strong>Name:</strong> ${
+                  orderData.Firstname + " " + orderData.Lastname
+                }</p> 
+                <p><strong>Phone:</strong> ${orderData.phone}</p> 
+                <p><strong>Email:</strong> ${orderData.email}</p> 
+                <h3>Ordered Items:</h3> 
+            `;
+        let total = 0;
+        orderData.items.forEach((item) => {
+          let cost = item.quantity * item.price;
+          total += cost;
+          receiptDiv.innerHTML += `<p>${item.quantity} kg of 
+${item.name} - $${cost}</p>`;
+        });
+        receiptDiv.innerHTML += `<h3>Total: $${total}</h3>`;
+      }
+    </script>
+  </body>
+</html>

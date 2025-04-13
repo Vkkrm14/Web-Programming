@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function calculateBMI() {
+            var gender = document.getElementById('gender').value;
+            var weight = parseFloat(document.getElementById('weight').value);
+            var feet = parseFloat(document.getElementById('feet').value);
+            var inches = parseFloat(document.getElementById('inches').value);
+            var heightInches = (feet * 12) + inches;
+            var heightInchesSquared = Math.pow(heightInches, 2);
+            var bmi;
+            bmi = (703 * weight) / heightInchesSquared;
+            document.getElementById('BMI').innerHTML = bmi.toFixed(2);
+            if (gender === "male") {
+               if (bmi<17.50){
+                alert("Anorexia");
+               }
+               else if(bmi>17.50&&bmi<=19.10){
+                alert("Underweight");
+               }
+               else if(bmi>19.10&&bmi<=25.80){
+                alert("Ideal Range");
+               }
+               else if(bmi>25.80&&bmi<=27.30){
+                alert("Marginally Overweight Range");
+               }
+               else if(bmi>27.30&&bmi<=32.30){
+                alert("Overweight Range");
+               }
+               else if(bmi>32.30){
+                alert("Obese range");
+               }
+            } else if (gender === "female") {
+                if (bmi<17.50){
+                alert("Anorexia");
+               }
+               else if(bmi>17.50&&bmi<=20.70){
+                alert("Underweight");
+               }
+               else if(bmi>20.70&&bmi<=26.40){
+                alert("Ideal Range");
+               }
+                else if(bmi>26.40&&bmi<=27.80){
+                alert("Marginally Overweight Range");
+               }
+               else if(bmi>27.80&&bmi<=31.10){
+                alert("Overweight Range");
+               }
+               else if(bmi>31.10){
+                alert("Obese range");
+               }
+            } 
+        }
+    </script>
+</head>
+<body>
+    <center>
+    <table border="2" style="width: 350px;">
+        <tr>
+        <th colspan="2">
+            BMI Calculator  
+            <select id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </th>
+        </tr>
+   
+    <tr>
+       
+        <td colspan="2"><h4>Enter Your Weight:</h4><p>(in pounds) <input type="text" id="weight"></p></td>
+       
+    </tr>
+    <tr>
+       
+        <td colspan="2"><h3>Enter your Weight</h3><p>(feet) <input type="text" id="feet"></p><p>(inches) <input type="text" id="inches"></p></td>
+    </tr>
+    <tr >
+            <td colspan="2">
+                <center><button id="calculate" onclick="calculateBMI()">calculate</button></center></td>
+   
+    </tr>
+    <tr >
+        <td><center>
+            <p><h3>Your</h3></p><p><h3>BMI</h3></p>
+        </center>
+        </td>
+        <td>
+            <center>
+            <div style="width: 200px;border: 2px solid black;height: 50px;">
+                <p id="BMI"></p>
+            </div>
+            </center>
+        </td>
+    </tr>
+       
+    </table>
+</center>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>23BCE1121</title>
+  </head>
+
+  <body>
+    <form>
+      <fieldset>
+        <legend>Personal Details</legend>
+
+        <label for="name">Name&emsp;&emsp;&emsp;&ensp;:</label>
+
+        <input type="text" id="name" name="name" /><br /><br />
+
+        <label for="name">Password&emsp;&emsp;:</label>
+
+        <input type="password" /><br /><br />
+
+        <label for="email">Email&emsp;&emsp;&emsp;&ensp;:</label>
+
+        <input type="email" /><br /><br />
+
+        <label for="gender">Gender&emsp;&emsp;&emsp;:</label>
+
+        <input type="radio" name="gender" checked="true" />Male
+
+        <input type="radio" name="gender" />Female<br /><br />
+
+        <label for="dob">DOB&emsp;&emsp;&emsp;&ensp;&nbsp;:</label>
+
+        <input type="date" name="dob" /><br /><br />
+
+        <label for="mobile">Mobile#&emsp;&emsp;&ensp;:</label>
+
+        <input type="tel" name="mobile" pattern="[0-9]{10}" required />
+      </fieldset>
+      <br /><br />
+
+      <fieldset>
+        <legend>Educational Qualification</legend>
+
+        <br /><br />
+
+        <label for="item">Degree&emsp;&emsp;&ensp;:</label>
+
+        <select name="item">
+          <option selected="true">--Select group--</option>
+
+          <optgroup label="UG">
+            <option>BE</option>
+
+            <option>BTech</option>
+
+            <option>Bsc</option>
+
+            <option>BA</option>
+
+            <option>BCA</option>
+
+            <option>BBA</option>
+          </optgroup>
+
+          <optgroup label="PG">
+            <option>ME</option>
+
+            <option>MTech</option>
+
+            <option>Msc</option>
+
+            <option>MA</option>
+
+            <option>MCA</option>
+
+            <option>MBA</option>
+          </optgroup>
+
+          <optgroup label="PhD">
+            <option>Engineering</option>
+
+            <option>Science</option>
+
+            <option>Management</option>
+          </optgroup>
+        </select>
+
+        &emsp;&emsp;&ensp;
+
+        <label for="eng">Engineering&emsp;&emsp;&ensp;:</label>
+
+        <select name="eng">
+          <option selected="true">--Select Group--</option>
+
+          <option>CSE</option>
+
+          <option>ECE</option>
+
+          <option>EEE</option>
+
+          <option>CIVIL</option>
+
+          <option>MECH</option></select
+        ><br /><br />
+      </fieldset>
+      <br /><br />
+
+      <label for="Hobbies">Hobbies&emsp;&emsp;&ensp;:</label>
+
+      <input type="checkbox" />Playing chess
+
+      <input type="checkbox" />Reading Books<br /><br />
+
+      <label for="color">Favourite Colour:</label>
+
+      <input type="color" name="color" /><br /><br />
+
+      <label for="Address">Address</label><br />
+
+      <textarea name="Address" rows="10" cols="120"></textarea><br /><br />
+
+      <label for="Resume">Attach Resume:</label>
+
+      <input type="file" name="Resume" value="Browse" />
+
+      <input type="submit" value="submit" />
+    </form>
+  </body>
+</html>

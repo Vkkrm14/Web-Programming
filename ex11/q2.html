@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>23BCE1121</title>
+  </head>
+  <body>
+    <script>
+      let stopwatch = document.createElement("input");
+      stopwatch.setAttribute("type", "text");
+      stopwatch.setAttribute("readonly", "true");
+      let count = 0;
+      let timeout;
+      stopwatch.value = count;
+      document.body.appendChild(stopwatch);
+      document.write("<br>");
+      document.write("<br>");
+      let button1 = document.createElement("button");
+      button1.innerHTML = "start";
+      document.body.appendChild(button1);
+      document.write("&emsp;");
+      button1.addEventListener("click", Start);
+      let button2 = document.createElement("button");
+      button2.innerHTML = "stop";
+      document.body.appendChild(button2);
+      document.write("&emsp;");
+      button2.addEventListener("click", Stop);
+      let button3 = document.createElement("button");
+      button3.innerHTML = "reset";
+      document.body.appendChild(button3);
+      document.write("&emsp;");
+      button3.addEventListener("click", Reset);
+      function Start() {
+        timeout = setTimeout(Start, 1000);
+        count++;
+        stopwatch.value = count;
+      }
+      function Stop() {
+        clearTimeout(timeout);
+      }
+      function Reset() {
+        count = 0;
+        stopwatch.value = count;
+      }
+      document.write("<br>");
+      document.write("<br>");
+      const inputLabel = document.createElement("label");
+      inputLabel.setAttribute("for", "textInput");
+      inputLabel.textContent = "Enter date of birth:  ";
+      document.body.append(inputLabel);
+      let dob = document.createElement("input");
+      dob.setAttribute("type", "text");
+      dob.value = "DD/MM/YYYY";
+      dob.setAttribute("onfocus", "changeValue(this)");
+      function changeValue(element) {
+        element.value = "";
+      }
+      document.body.appendChild(dob);
+      document.write("&emsp;");
+      let calc = document.createElement("button");
+      calc.innerHTML = "Calculate Age";
+      calc.addEventListener("click", calcAge);
+      let age = 0;
+      document.body.append(calc);
+      document.write("&emsp;");
+      let p = document.createElement("p");
+      document.body.append(p);
+      function calcAge() {
+        let year = dob.value.slice(6);
+        age = 2025 - year;
+        p.textContent = "Your age is: " + age;
+      }
+      document.write("<br>");
+      document.write("<br>");
+      const inputLabel1 = document.createElement("label");
+      inputLabel1.setAttribute("for", "textInput");
+      inputLabel1.textContent = "Type something:";
+      const inputField = document.createElement("input");
+      inputField.setAttribute("type", "text");
+      inputField.setAttribute("id", "textInput");
+      const countLabel = document.createElement("label");
+      countLabel.setAttribute("for", "keyCount");
+      countLabel.textContent = "Key Press Count:";
+      const countDisplay = document.createElement("input");
+      countDisplay.setAttribute("type", "text");
+      countDisplay.setAttribute("id", "keyCount");
+      countDisplay.setAttribute("readonly", true);
+      document.body.appendChild(inputLabel1);
+      document.body.appendChild(inputField);
+      document.write("<br>");
+      document.write("<br>");
+      document.body.appendChild(countLabel);
+      document.body.appendChild(countDisplay);
+      let count1 = 0;
+      inputField.addEventListener("keydown", function () {
+        count1++;
+        countDisplay.value = count1;
+      });
+    </script>
+  </body>
+</html>

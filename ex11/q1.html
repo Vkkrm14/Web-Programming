@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>23BCE1121</title>
+    <style>
+      table,
+      td,
+      th {
+        border: 1px solid black;
+      }
+      .btn {
+        background-color: red;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        border-radius: 12px;
+        transition-duration: 0.4s;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let table = document.createElement("table");
+      table.border = "2";
+      table.style.width = "200px";
+      table.style.height = "200px";
+      for (let i = 0; i < 3; i++) {
+        let row = table.insertRow();
+        for (let j = 0; j < 3; j++) {
+          let cell = row.insertCell();
+          cell.innerHTML = i * 3 + j + 1;
+        }
+      }
+      document.body.appendChild(table);
+      let button = document.createElement("button");
+      button.className = "btn";
+      button.innerHTML = "Change color";
+      button.setAttribute("onmouseover", "changebcolor(this)");
+      document.body.appendChild(button);
+
+      function changebcolor(element) {
+        element.style.backgroundColor = "green";
+      }
+      document.write("<br>");
+      let textbox = document.createElement("INPUT");
+      textbox.setAttribute("type", "text");
+      textbox.setAttribute("style", "background-color:green;");
+      textbox.setAttribute("onfocus", "changecolor(this);");
+      textbox.setAttribute("onchange", "changevalue(this);");
+      document.body.appendChild(textbox);
+      function changecolor(element) {
+        element.style.backgroundColor = "yellow";
+      }
+      function changevalue(element) {
+        element.value = "Have a nice day!!";
+      }
+      document.write("<br>");
+      document.write("<br>");
+      let field = document.createElement("INPUT");
+      field.setAttribute("type", "text");
+      document.body.appendChild(field);
+      document.write("&emsp;");
+      var value = field.value;
+      let button1 = document.createElement("button");
+      button1.innerHTML = "Enter";
+      button1.setAttribute("onclick", "validateText()");
+      let list = document.createElement("ul");
+      function validateText() {
+        let listitem = document.createElement("li");
+        listitem.textContent = field.value;
+        list.appendChild(listitem);
+        field.value = "";
+      }
+      document.body.appendChild(button1);
+      document.write("<br>");
+      document.write("<br>");
+      document.body.append(list);
+      document.write("<br>");
+      document.write("<br>");
+      const inputLabel = document.createElement("label");
+      inputLabel.setAttribute("for", "textInput");
+      inputLabel.textContent = "Type something:";
+      const inputField = document.createElement("input");
+      inputField.setAttribute("type", "text");
+      inputField.setAttribute("id", "textInput");
+      const countLabel = document.createElement("label");
+      countLabel.setAttribute("for", "keyCount");
+      countLabel.textContent = "Key Press Count:";
+      const countDisplay = document.createElement("input");
+      countDisplay.setAttribute("type", "text");
+      countDisplay.setAttribute("id", "keyCount");
+      countDisplay.setAttribute("readonly", true);
+      document.body.appendChild(inputLabel);
+      document.body.appendChild(inputField);
+      document.write("<br>");
+      document.write("<br>");
+      document.body.appendChild(countLabel);
+      document.body.appendChild(countDisplay);
+      let count = 0;
+      inputField.addEventListener("keydown", function () {
+        count++;
+        countDisplay.value = count;
+      });
+    </script>
+  </body>
+</html>

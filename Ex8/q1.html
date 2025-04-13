@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>23BCE1121</title>
+    <script type="text/javascript">
+      var a, b, c;
+
+      function get1() {
+        a = parseInt(prompt("enter operand 1"));
+      }
+
+      function get2() {
+        b = parseInt(prompt("enter operand 2"));
+      }
+
+      function get3() {
+        c = prompt("enter operator");
+      }
+
+      function post() {
+        if (c == "+") {
+          alert(a + b);
+        } else if (c == "-") {
+          alert(a - b);
+        } else if (c == "*") {
+          alert(a * b);
+        } else if (c == "/") {
+          alert(a / b);
+        } else {
+          alert("wrong operator!");
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <button onclick="get1()" value="Enter values">Enter value 1</button>
+
+    <button onclick="get2()" value="Enter values">Enter value 2</button>
+
+    <button onclick="get3()" value="Enter values">Enter operator</button>
+
+    <button onclick="post()" value="Obtain result">Calculate</button>
+  </body>
+</html>
